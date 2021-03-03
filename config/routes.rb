@@ -18,4 +18,6 @@ resources :bookings, only: :index  # Bookings that I have made, maybe add a revi
 # dashboard, to: 'dashboards#show'
 resource :dashboard, only: :show
 
+# rails g controller dashboards
+
 end
