@@ -3,7 +3,14 @@ class FriendsController < ApplicationController
 
   # GET /friends
   def index
-    @friends = Friend.all
+    @friends = Friend.geocoded
+
+    @markers = @friends.map do |friend|
+      {
+        lat: friend.latitude,
+        lng: friend.longitude
+      }
+    end
   end
 
   # GET /friends/1
